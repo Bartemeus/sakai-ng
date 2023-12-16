@@ -45,7 +45,14 @@
                 <button pButton pRipple type="button" label="Get Started" class="p-button-rounded text-xl border-none mt-3 bg-blue-500 font-normal line-height-3 px-3 text-white"></button>
             </div>
             <div class="flex justify-content-center md:justify-content-end">
-                <img src="assets/demo/images/landing/screen-1.png" alt="Hero Image" class="w-9 md:w-auto">
+                <div>
+                    <h2>Chat Messenger</h2>
+                    <ul>
+                      <li *ngFor="let message of messages">{{ message }}</li>
+                    </ul>
+                    <input type="text" [(ngModel)]="messageToSend" placeholder="Type a message...">
+                    <button (click)="sendMessage()">Send</button>
+                  </div>
             </div>
         </div>
         
