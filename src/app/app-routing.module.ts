@@ -2,13 +2,14 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { NotfoundComponent } from './demo/components/notfound/notfound.component';
 import { AppLayoutComponent } from "./layout/app.layout.component";
+import { AuthGuard } from './guard/auth.guard';
 
 @NgModule({
     imports: [
         RouterModule.forRoot([
             { path: '', loadChildren: () => import('./demo/components/landing/landing.module').then(m => m.LandingModule) },
             {
-                path: 'crm', component: AppLayoutComponent,
+                path: 'crm', component: AppLayoutComponent, canActivate: [AuthGuard],
                 children: [
                     { path: 'uikit', loadChildren: () => import('./demo/components/uikit/uikit.module').then(m => m.UIkitModule) },
                     { path: 'dashboard', loadChildren: () => import('./demo/components/dashboard/dashboard.module').then(m => m.DashboardModule) },

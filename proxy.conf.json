@@ -1,0 +1,9 @@
+{
+    "/api": {
+      "target": "https://ner.kz",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }
+  
