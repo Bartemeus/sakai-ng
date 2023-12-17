@@ -13,10 +13,11 @@ import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
 import { AuthInterceptor } from './demo/components/auth/auth.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SocketIOModule } from './demo/components/landing/SocketIO.module';
 
 @NgModule({
     declarations: [AppComponent, NotfoundComponent],
-    imports: [AppRoutingModule, AppLayoutModule],
+    imports: [AppRoutingModule, AppLayoutModule,SocketIOModule],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         {
@@ -31,6 +32,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
         NodeService,
         PhotoService,
         ProductService,
+        
     ],
     bootstrap: [AppComponent],
 })
