@@ -27,8 +27,6 @@ jobs:
             mkdir -p ~/.ssh
             ssh-keyscan -H ner.kz >> ~/.ssh/known_hosts
             chmod 600 ~/.ssh/known_hosts
-      - name: Add SSH key for ner.kz
-        run: ssh-keyscan -H ner.kz >> ~/.ssh/known_hosts
       - name: Deploy to server via SCP
         run: scp -r -o StrictHostKeyChecking=no ./dist/* nurbek@62.84.34.71:/var/www/html
         env:
