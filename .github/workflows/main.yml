@@ -30,6 +30,6 @@ jobs:
       - name: Add SSH key for ner.kz
         run: ssh-keyscan -H ner.kz >> ~/.ssh/known_hosts
       - name: Deploy to server via SCP
-        run: scp -r ./dist/* ${{ secrets.SERVER_USERNAME }}@ner.kz:/var/www/html
+        run: scp -r ./dist/* nurbek@62.84.34.71:/var/www/html
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
