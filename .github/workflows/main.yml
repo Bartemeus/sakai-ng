@@ -22,6 +22,11 @@ jobs:
         run: npm install 
       - name: Build Angular
         run: npm run build --prod
+      - name: Setup SSH
+        run: |
+            mkdir -p ~/.ssh
+            ssh-keyscan -H ner.kz >> ~/.ssh/known_hosts
+            chmod 600 ~/.ssh/known_hosts
       - name: Add SSH key for ner.kz
         run: ssh-keyscan -H ner.kz >> ~/.ssh/known_hosts
       - name: Deploy to server via SCP
