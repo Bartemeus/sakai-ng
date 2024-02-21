@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { PathLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppLayoutModule } from './layout/app.layout.module';
@@ -17,14 +17,9 @@ import { SocketIOModule } from './demo/components/landing/SocketIO.module';
 
 @NgModule({
     declarations: [AppComponent, NotfoundComponent],
-    imports: [AppRoutingModule, AppLayoutModule,SocketIOModule],
+    imports: [AppRoutingModule, AppLayoutModule],
     providers: [
-        { provide: LocationStrategy, useClass: HashLocationStrategy },
-        {
-            provide: HTTP_INTERCEPTORS,
-            useClass: AuthInterceptor,
-            multi: true,
-        },
+        { provide: LocationStrategy, useClass: PathLocationStrategy },
         CountryService,
         CustomerService,
         EventService,
@@ -32,7 +27,6 @@ import { SocketIOModule } from './demo/components/landing/SocketIO.module';
         NodeService,
         PhotoService,
         ProductService,
-        
     ],
     bootstrap: [AppComponent],
 })
