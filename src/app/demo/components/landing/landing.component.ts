@@ -5,7 +5,20 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
 @Component({
     selector: 'app-landing',
-    templateUrl: './landing.component.html'
+    templateUrl: './landing.component.html',
+    styles:`.dropdown-content {
+      display: none !important;
+      position: absolute; /* Позиционирование относительно родительского элемента */
+      background-color: #f9f9f9; /* Цвет фона */
+      min-width: 160px; /* Минимальная ширина */
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Тень для выпадающего меню */
+      z-index: 1; /* Убедитесь, что выпадающее меню находится над другими элементами */
+  }
+  
+  .dropdown-content.visible {
+      display: block !important;
+  }
+  `
 })
 export class LandingComponent {
     messageToSend: string;
@@ -24,7 +37,11 @@ export class LandingComponent {
         this.messages.push(data);
       });
      }
-    
+     isDropdownVisible = false;
+
+  toggleDropdown() {
+    this.isDropdownVisible = !this.isDropdownVisible;
+  }
   ngOnInit() {
     this.socket.on('msg', (data: string) => {
         this.messages.push(data);
