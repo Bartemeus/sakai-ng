@@ -33,9 +33,9 @@ export class LandingComponent {
       param4:'1 ТБ (SSD) DDR4 32 ГБ 4 x 8 ГБ'
     }];
     constructor(public layoutService: LayoutService, public router: Router, private socket: Socket) {
-      this.socket.on('message', (data: string) => {
-        this.messages.push(data);
-      });
+      // this.socket.on('message', (data: string) => {
+      //   this.messages.push(data);
+      // });
      }
      isDropdownVisible = false;
 
