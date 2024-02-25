@@ -1,0 +1,38 @@
+:host {
+  display: block;
+}
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+}
+
+a {
+  display: inline-block;
+  background-color: #d6edfb;
+  padding: 1rem;
+  margin: 1rem;
+  min-width: 100px;
+  text-align: center;
+  text-decoration: none;
+}
+a:hover {
+  background-color: rgb(12, 68, 120);
+  color: #fff;
+}
+
+.my-code-header {
+  text-align: center;
+  background-color: rgb(235, 233, 232);
+  padding: 1rem;
+}
+
+.main {
+  margin: auto;
+  text-align: center;
+  padding: 3rem 0;
+  border: 2px solid #ddd;
+  margin-top: 2rem;
+}
