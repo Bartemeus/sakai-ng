@@ -15,7 +15,7 @@ export class CountryService {
     getAll() {
         return this.http.get<any>('api/getall')
             .toPromise()
-            .then(res => res.data as any[])
+            .then(res => res as any[])
             .then(data => data);
     }
 }

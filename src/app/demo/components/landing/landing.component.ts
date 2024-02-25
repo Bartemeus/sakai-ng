@@ -39,7 +39,7 @@ export class LandingComponent {
         // this.socket.on('msg', (data: string) => {
         //     this.messages.push(data);
         // });
-        this.countryService.getCountries().then(countries => {
+        this.countryService.getAll().then(countries => {
             this.lots = countries;
         });
     }
