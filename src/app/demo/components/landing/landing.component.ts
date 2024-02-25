@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
+import { CountryService } from '../../service/country.service';
 
 @Component({
     selector: 'app-landing',
@@ -23,36 +24,8 @@ export class LandingComponent {
     messageToSend: string;
     messages: string[] = [];
     noBuilderPageForUrl: boolean = false;
-    lots: any[] = [
-        {
-            title: 'Asus ROG Strix',
-            img: 'https://api.technodom.kz/f3/api/v1/images/257922_2.jpg',
-            price: 600000,
-            param1: 'AMD Ryzen 7 AM4 5800X',
-            param2: 'NVIDIA GeForce RTX 3060 8 ГБ',
-            param3: 'Материнская плата ASUS B550',
-            param4: '1 ТБ (SSD) DDR4 32 ГБ 4 x 8 ГБ',
-        },
-        // {
-        //     title: 'Asus ROG Strix',
-        //     img: 'https://api.technodom.kz/f3/api/v1/images/257922_2.jpg',
-        //     price: 600000,
-        //     param1: 'AMD Ryzen 7 AM4 5800X',
-        //     param2: 'NVIDIA GeForce RTX 3060 8 ГБ',
-        //     param3: 'Материнская плата ASUS B550',
-        //     param4: '1 ТБ (SSD) DDR4 32 ГБ 4 x 8 ГБ',
-        // },
-        // {
-        //     title: 'balaqai',
-        //     img: 'https://frankfurt.apollo.olxcdn.com/v1/files/o9o45jpxdovx-KZ/image;s=900x900',
-        //     price: 5690,
-        //     param1: 'Детские подгузники',
-        //     param2: 'Жапондық технологиямен',
-        //     param3: 'Подгузники “BALAQAI”',
-        //     param4: '5 690 ₸',
-        // },
-    ];
-    constructor(public layoutService: LayoutService, public router: Router) {
+    lots: any[] = [];
+    constructor(public layoutService: LayoutService, public router: Router,private countryService: CountryService) {
         // this.socket.on('message', (data: string) => {
         //   this.messages.push(data);
         // });
@@ -66,6 +39,9 @@ export class LandingComponent {
         // this.socket.on('msg', (data: string) => {
         //     this.messages.push(data);
         // });
+        this.countryService.getCountries().then(countries => {
+            this.lots = countries;
+        });
     }
 
     sendMessage(): void {

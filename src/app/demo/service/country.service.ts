@@ -12,4 +12,10 @@ export class CountryService {
             .then(res => res.data as any[])
             .then(data => data);
     }
+    getAll() {
+        return this.http.get<any>('api/getall')
+            .toPromise()
+            .then(res => res.data as any[])
+            .then(data => data);
+    }
 }
