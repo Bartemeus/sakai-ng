@@ -8,6 +8,7 @@ import { ChartModule } from 'primeng/chart';
 import { PanelModule } from 'primeng/panel';
 import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
+import { BuilderModule } from '@builder.io/angular';
 
 @NgModule({
     imports: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
         ChartModule,
         PanelModule,
         ButtonModule,
+        BuilderModule.forRoot('94b7887ee95b4135a0a7d6d3cfa9a51a'),
         FormsModule
     ],
     declarations: [LandingComponent]

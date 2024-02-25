@@ -133,6 +133,18 @@
                 </div>
             </div>
         </div> -->
+
+<builder-component
+  *ngIf="!noBuilderPageForUrl"
+  model="page"
+  (load)="noBuilderPageForUrl = $event ? false : true"
+  (error)="noBuilderPageForUrl = true"
+>
+  <!-- Default content inside the tag shows while the builder content is fetching -->
+  <div class="spinner"></div>
+</builder-component>
+<!-- add your page not found component here -->
+<app-page-not-found *ngIf="noBuilderPageForUrl"> </app-page-not-found>
     
         <div id="pricing" class="py-4 px-4 lg:px-8 my-2 md:my-4">
             <div class="text-center">
