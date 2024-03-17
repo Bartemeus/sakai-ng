@@ -14,10 +14,13 @@ import { PhotoService } from './demo/service/photo.service';
 import { AuthInterceptor } from './demo/components/auth/auth.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SocketIOModule } from './demo/components/landing/SocketIO.module';
+import { FormlyModule } from '@ngx-formly/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormlyPrimeNGModule } from '@ngx-formly/primeng';
 
 @NgModule({
     declarations: [AppComponent, NotfoundComponent],
-    imports: [AppRoutingModule, AppLayoutModule,SocketIOModule],
+    imports: [AppRoutingModule, AppLayoutModule,SocketIOModule, FormlyModule.forRoot(), ReactiveFormsModule, FormlyPrimeNGModule],
     providers: [
         { provide: LocationStrategy, useClass: PathLocationStrategy },
         CountryService,
