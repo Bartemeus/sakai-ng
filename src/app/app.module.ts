@@ -17,9 +17,10 @@ import { SocketIOModule } from './demo/components/landing/SocketIO.module';
 import { FormlyModule } from '@ngx-formly/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormlyPrimeNGModule } from '@ngx-formly/primeng';
+import { DynComponent, JsonPipe } from './dyn/dyn.component';
 
 @NgModule({
-    declarations: [AppComponent, NotfoundComponent],
+    declarations: [AppComponent, NotfoundComponent,DynComponent,JsonPipe],
     imports: [AppRoutingModule, AppLayoutModule,SocketIOModule, FormlyModule.forRoot(), ReactiveFormsModule, FormlyPrimeNGModule],
     providers: [
         { provide: LocationStrategy, useClass: PathLocationStrategy },

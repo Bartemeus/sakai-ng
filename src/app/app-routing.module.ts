@@ -4,6 +4,7 @@ import { NotfoundComponent } from './demo/components/notfound/notfound.component
 import { AppLayoutComponent } from "./layout/app.layout.component";
 import { AuthGuard } from './guard/auth.guard';
 import { HomeComponent } from './demo/components/home/home.component';
+import { DynComponent } from './dyn/dyn.component';
 
 @NgModule({
     imports: [
@@ -22,6 +23,7 @@ import { HomeComponent } from './demo/components/home/home.component';
             },
             { path: 'auth', loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },
             { path: 'home', component: HomeComponent },
+            { path: 'dyn', component: DynComponent },
             { path: 'landing', loadChildren: () => import('./demo/components/landing/landing.module').then(m => m.LandingModule) },
             { path: 'notfound', component: NotfoundComponent },
             { path: '**', redirectTo: '/notfound' },
