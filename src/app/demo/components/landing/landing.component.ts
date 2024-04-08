@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 import { CountryService } from '../../service/country.service';
+import sdk from '@stackblitz/sdk';
 
 @Component({
     selector: 'app-landing',
@@ -18,9 +19,43 @@ import { CountryService } from '../../service/country.service';
   .dropdown-content.visible {
       display: block !important;
   }
+  
+#embed {
+  display: flex;
+  flex: 1 1 60%;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border: 0;
+}
+
+#embed > p {
+  width: min(300px, 100%);
+  margin: 2rem auto;
+  padding: 4rem 1rem;
+  border: dashed 2px #ccc;
+  border-radius: 0.5em;
+  font-size: 85%;
+  color: #777;
+}
+
   `,
 })
 export class LandingComponent {
+embedBtn() {
+    sdk.embedProjectId('embed', 'css-custom-prop-color-values', {
+        openFile: 'index.ts',
+      });
+}
+openBtn() {
+    sdk.openProjectId('css-custom-prop-color-values', {
+        newWindow: false,
+        view: 'preview',
+      });
+}
     messageToSend: string;
     messages: string[] = [];
     noBuilderPageForUrl: boolean = false;

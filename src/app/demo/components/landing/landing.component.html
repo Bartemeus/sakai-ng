@@ -103,15 +103,15 @@
                     </li>
                 </ul>
                 <div class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
-                    <button pButton pRipple label="Login"  [routerLink]="['/auth/login']" class="p-button-text p-button-rounded border-none font-light line-height-2 text-blue-500"></button>
-                    <button pButton pRipple label="Register" class="p-button-rounded border-none ml-5 font-light line-height-2 bg-blue-500 text-white"></button>
+                    <button pButton pRipple label="Login"  [routerLink]="['/auth/login']" class="p-button-text p-button-rounded border-none font-light line-height-2 text-blue-500">asd</button>
+                    <button pButton pRipple label="Register" class="p-button-rounded border-none ml-5 font-light line-height-2 bg-blue-500 text-white">asd</button>
                 </div>
             </div>
         </div>
     
-        <!-- <div id="highlights" class="py-4 px-4 lg:px-8 mx-0 my-6 lg:mx-8">
+        <div id="highlights" class="py-4 px-4 lg:px-8 mx-0 my-6 lg:mx-8">
     
-            <div class="grid mt-8 pb-2 md:pb-8">
+            <!-- <div class="grid mt-8 pb-2 md:pb-8">
                 <div class="flex justify-content-center col-12 lg:col-6 bg-purple-100 p-0 flex-order-1 lg:flex-order-0" style="border-radius:8px;">
                     <img src="https://img.freepik.com/free-vector/gadgets-on-auction_1284-22060.jpg" class="w-11" alt="mockup mobile">
                 </div>
@@ -131,8 +131,22 @@
                         </div>
                     </span>
                 </div>
+            </div> -->
+            <div>
+                <h1>Open and embed a StackBlitz project</h1>
+                <nav>
+                  <div id="app">
+                    <button (click)="openBtn()">Open project</button>
+                    <button (click)="embedBtn()">Embed project</button>
+                  </div>
+                </nav>
             </div>
-        </div> -->
+              
+              <div id="embed">
+                <p>Embed will go here</p>
+              </div>
+              
+        </div>
 
 <builder-component
   *ngIf="!noBuilderPageForUrl"
@@ -160,7 +174,7 @@
                         <div class="my-5 text-center">
                             <span class="text-5xl font-bold mr-2 text-900">{{lot.price | currency:'&#8376;':'symbol':'1.0-0'}}</span>
                             <span class="text-600">есть торг</span>
-                            <button pButton pRipple label="Начать торги" class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light line-height-2 bg-blue-500 text-white"></button>
+                            <button pButton pRipple label="Начать торги" class="block mx-auto mt-4 p-button-rounded border-none ml-3 font-light line-height-2 bg-blue-500 text-white">asd</button>
                         </div>
                         <p-divider class="w-full bg-surface-200"></p-divider>
                         <ul class="my-5 list-none p-0 flex text-900 flex-column">
@@ -215,7 +229,7 @@
                         <div class="col-12 md:col-3 mt-4 md:mt-0">
                             <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Community</h4>
                             <!-- <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Discord</a> -->
-                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Events<img src="assets/demo/images/landing/new-badge.svg" class="ml-2"/></a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Events<img src="assets/demo/images/landing/new-badge.svg" class="ml-2" title="s"/></a>
                             <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">FAQ</a>
                             <a class="line-height-3 text-xl block cursor-pointer text-700">Blog</a>
                         </div>
